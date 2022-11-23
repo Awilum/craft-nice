@@ -78,7 +78,7 @@ Display nice date time in the twig tempalates:
 
 //=> November 23, 2022, 4:24 am
 {{ 1669177469 | niceDateTime }}
-
+```
 
 Display nice file name in the twig tempalates:
 
