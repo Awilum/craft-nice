@@ -18,12 +18,12 @@ use TypeError;
 /**
  * Get nice file size
  * 
- * @param string $input Input
+ * @param int $input Input
  * @param bool $decimal Is decimal?
  * 
  * @return string
  */
-function niceFileSize(int $input, bool $decimal = true): string {
+function niceFileSize(int $input, bool $decimal = true): ?string {
     if ($input <= 0) return null;
     
     $calcBase = $decimal ? 1000 : 1024;
