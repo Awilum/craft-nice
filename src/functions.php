@@ -93,7 +93,7 @@ function niceNumber($input, int $decimals = 0, string $point = '.', string $deli
  * @return string
  */
 function niceDateTime($input, string $format = 'F j, Y, g:i a'): string {
-    return date($format, $input);
+    return date($format, (int) $input);
 }
 
 /**
