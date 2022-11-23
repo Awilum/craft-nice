@@ -48,7 +48,7 @@ class NiceTwigExtension extends AbstractExtension
 			new TwigFilter('niceHumanNumber', fn(int $input, bool $showDecimal = false, int $decimals = 0) => niceHumanNumber($input, $showDecimal)),
 			new TwigFilter('niceNumber', fn($input, int $decimals = 0, string $point = '.', string $delimiter = ',') => niceNumber($input, $decimals, $point, $delimiter)),
 			new TwigFilter('niceDateTime', fn($input, string $format = 'F j, Y, g:i a') => niceDateTime($input, $format)),
-			new TwigFilter('niceFileName', fn(string $input, string $delimiter = '-') => niceDateTime($input, $delimiter))
+			new TwigFilter('niceFileName', fn(string $input, string $delimiter = '-') => niceFileName($input, $delimiter))
 		];
 	}
 
@@ -64,7 +64,7 @@ class NiceTwigExtension extends AbstractExtension
 			new TwigFunction('niceHumanNumber', fn(int $input, bool $showDecimal = false, int $decimals = 0) => niceHumanNumber($input, $showDecimal)),
 			new TwigFunction('niceNumber', fn($input, int $decimals = 0, string $point = '.', string $delimiter = ',') => niceNumber($input, $decimals, $point, $delimiter)),
 			new TwigFunction('niceDateTime', fn($input, string $format = 'F j, Y, g:i a') => niceDateTime($input, $format)),
-			new TwigFunction('niceFileName', fn(string $input, string $delimiter = '-') => niceDateTime($input, $delimiter))
+			new TwigFunction('niceFileName', fn(string $input, string $delimiter = '-') => niceFileName($input, $delimiter))
 		];
 	}
 }
