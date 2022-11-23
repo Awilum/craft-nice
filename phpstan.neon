@@ -1,0 +1,7 @@
+parameters:
+    level: 3
+    paths:
+        - %currentWorkingDirectory%/src/
+    ignoreErrors:
+        # ignore
+        - '/Access to static property \$app on an unknown class Craft/'

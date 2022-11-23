@@ -1,0 +1,39 @@
+name: CI
+on: ['push', 'pull_request']
+jobs:
+  ci:
+    name: PHP ${{ matrix.php }} - ${{ matrix.os }} - ${{ matrix.dependency-version }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+        php: ['8.0', '8.1']
+        dependency-version: [prefer-stable]
+
+    steps:
+    - name: Get latest code
+      uses: actions/checkout@v2
+
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: ${{ matrix.php }}
+        extensions:  json, mbstring, pcntl
+        ini-values: disable_functions, error_reporting=E_ALL
+        tools: composer:v2
+        coverage: xdebug
+
+    - name: Setup Problem Matches
+      run: |
+        echo "::add-matcher::${{ runner.tool_cache }}/php.json"
+        echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
+
+    - name: Install dependencies
+      run: composer update --${{ matrix.dependency-version }} --no-interaction --no-progress
+      
+    - name: PHP Static Analysis
+      run: ./vendor/bin/phpstan
+      
+    - name: Run Tests
+      run: ./vendor/bin/pest --coverage
+      

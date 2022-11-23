@@ -1,0 +1,48 @@
+{
+    "name": "craft-plugins/nice",
+    "description": "A nice plugin with nice functions for nice data representation :)",
+    "type": "craft-plugin",
+    "keywords": ["twig", "craft", "craft-plugin", "craftcms"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sergey Romanenko",
+            "email": "awilum@msn.com",
+            "homepage": "https://awilum.github.io"
+        }
+    ],
+    "support": {
+      "email": "awilum@msn.com",
+      "issues": "https://github.com/craft-plugins/nice/issues?state=open",
+      "source": "https://github.com/craft-plugins/nice",
+      "docs": "https://github.com/craft-plugins/nice/master/README.md"
+    },
+    "require": {
+      "craftcms/cms": "^4.3.3"
+    },
+    "autoload": {
+      "psr-4": {
+        "CraftPlugins\\Nice\\": "src/"
+      },
+      "files": ["src/functions.php"]
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+      "name": "Nice",
+      "handle": "nice",
+      "class": "CraftPlugins\\Nice\\Nice"
+    },
+    "require-dev": {
+      "ext-iconv": "*",
+      "pestphp/pest": "^1.22",
+      "phpstan/phpstan": "^1.8.0"
+    },
+    "config": {
+        "allow-plugins": {
+            "yiisoft/yii2-composer": true,
+            "craftcms/plugin-installer": true,
+            "pestphp/pest-plugin": true
+        }
+    }
+}
