@@ -1,10 +1,10 @@
 <?php
 
-use function CraftPlugins\Nice\niceFileSize;
-use function CraftPlugins\Nice\niceHumanNumber;
-use function CraftPlugins\Nice\niceNumber;
-use function CraftPlugins\Nice\niceDateTime;
-use function CraftPlugins\Nice\niceFileName;
+use function Awilum\CraftNice\niceFileSize;
+use function Awilum\CraftNice\niceHumanNumber;
+use function Awilum\CraftNice\niceNumber;
+use function Awilum\CraftNice\niceDateTime;
+use function Awilum\CraftNice\niceFileName;
 
 test('nice file size', function () {
     expect(niceFileSize(1))->toBe('1 B');

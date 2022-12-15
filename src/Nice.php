@@ -11,11 +11,11 @@
 
 declare(strict_types=1);
 
-namespace CraftPlugins\Nice;
+namespace Awilum\CraftNice;
 
 use Craft;
 use craft\base\Plugin;
-use CraftPlugins\Nice\NiceTwigExtension;
+use Awilum\CraftNice\NiceTwigExtension;
 
 class Nice extends Plugin
 {

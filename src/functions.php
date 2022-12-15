@@ -11,7 +11,7 @@
 
 declare(strict_types=1);
 
-namespace CraftPlugins\Nice;
+namespace Awilum\CraftNice;
 
 use TypeError;
 

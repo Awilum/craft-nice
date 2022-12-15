@@ -11,18 +11,18 @@
 
 declare(strict_types=1);
 
-namespace CraftPlugins\Nice;
+namespace Awilum\CraftNice;
 
 use Twig\Environment;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFunction;
 use Twig\TwigFilter;
 use Twig_Extension;
-use function CraftPlugins\Nice\niceFileSize;
-use function CraftPlugins\Nice\niceHumanNumber;
-use function CraftPlugins\Nice\niceNumber;
-use function CraftPlugins\Nice\niceDateTime;
-use function CraftPlugins\Nice\niceFileName;
+use function Awilum\CraftNice\niceFileSize;
+use function Awilum\CraftNice\niceHumanNumber;
+use function Awilum\CraftNice\niceNumber;
+use function Awilum\CraftNice\niceDateTime;
+use function Awilum\CraftNice\niceFileName;
 
 class NiceTwigExtension extends AbstractExtension
 {
